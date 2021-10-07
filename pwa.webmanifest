@@ -1,0 +1,16 @@
+{
+  "name": "PWA demo",
+  "short_name": "PWA demo",
+  "description": "This App is PWA demo",
+  "icons": [
+    {
+      "src": "icons/luffy.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://tutti2612.github.io/pwa-demo/index.html?from=pwa",
+  "display": "browser",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
