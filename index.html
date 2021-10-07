@@ -8,5 +8,35 @@
   </head>
   <body>
     <h1>PWA demo</h1>
+    <button id="notification">Notification</button>
+    <button id="notice">Notice</button>
+
+    <script>
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").then(
+          (registration) => {
+            console.log("ServiceWorker登録成功");
+            console.log(registration);
+          },
+          (err) => {
+            console.log("ServiceWorker登録失敗", err);
+          }
+        );
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const notification = document.getElementById("notification");
+        notification.addEventListener("click", () => {
+          Notification.requestPermission().then((result) => {
+            console.log(result);
+          });
+        });
+
+        const notice = document.getElementById("notice");
+        notice.addEventListener("click", () => {
+          new Notification("hoge", { body: "fuga" });
+        });
+      });
+    </script>
   </body>
 </html>
